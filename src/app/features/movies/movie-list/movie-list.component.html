@@ -1,0 +1,105 @@
+<div class="container">
+    <div class="p-4 w-75 m-auto">
+        <input type="text" [(ngModel)]="searchTerm" placeholder="Search a movie..." class="form-control bg-transparent"
+            name="" id="">
+    </div>
+
+    <div class="row">
+        <div class="w-25">
+            <div class="brdr w-25 mb-3"></div>
+            <h3 class="py-2">Trending <br> Movies <br> To Watch Now</h3>
+            <p class="secondFontColor py-2">Now Playing In Theaters</p>
+            <div class="brdr w-100 mt-3"></div>
+        </div>
+        <!-- now playing -->
+        <div class="now-playing w-100">
+            @for(movie of nowPlayingMovies|search:searchTerm; track movie.id; let i = $index){
+            <mat-card class="example-card" appearance="raised">
+                <mat-card-header>
+                    <mat-card-title>{{movie.name ?? movie.title}}</mat-card-title>
+                    <!-- <mat-card-subtitle>{{movie.name ?? movie.title}}</mat-card-subtitle> -->
+                </mat-card-header>
+                <img mat-card-image [src]="imgPrefix + movie.poster_path" [alt]="movie.name ?? movie.title">
+                <mat-card-content>
+                    <p>{{movie.description}}</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <a mat-button [routerLink]="" class="text-decoration-none">View Details</a>
+                </mat-card-actions>
+            </mat-card>
+            }
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <h6 class="text-start">Upcoming: </h6>
+        </div>
+        <!-- upcoming -->
+        <div class="upcoming w-100">
+            @for(movie of upcomingMovies|search:searchTerm; track movie.id; let i = $index){
+            <mat-card class="example-card" appearance="raised">
+                <mat-card-header>
+                    <mat-card-title>{{movie.name ?? movie.title}}</mat-card-title>
+                    <!-- <mat-card-subtitle>{{movie.name ?? movie.title}}</mat-card-subtitle> -->
+                </mat-card-header>
+                <img mat-card-image [src]="imgPrefix + movie.poster_path" [alt]="movie.name ?? movie.title">
+                <mat-card-content>
+                    <p>{{movie.description}}</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <a mat-button [routerLink]="" class="text-decoration-none">View Details</a>
+                </mat-card-actions>
+            </mat-card>
+            }
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <h6 class="text-start">Top Rated: </h6>
+        </div>
+        <!-- top rated -->
+        <div class="top-rated w-100">
+            @for(movie of topRatedMovies|search:searchTerm; track movie.id; let i = $index){
+            <mat-card class="example-card" appearance="raised">
+                <mat-card-header>
+                    <mat-card-title>{{movie.name ?? movie.title}}</mat-card-title>
+                    <!-- <mat-card-subtitle>{{movie.name ?? movie.title}}</mat-card-subtitle> -->
+                </mat-card-header>
+                <img mat-card-image [src]="imgPrefix + movie.poster_path" [alt]="movie.name ?? movie.title">
+                <mat-card-content>
+                    <p>{{movie.description}}</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <a mat-button [routerLink]="" class="text-decoration-none">View Details</a>
+                </mat-card-actions>
+            </mat-card>
+            }
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <h6 class="text-start">Popular: </h6>
+        </div>
+        <!-- popular -->
+        <div class="popular w-100">
+            @for(movie of popularMovies|search:searchTerm; track movie.id; let i = $index){
+            <mat-card class="example-card" appearance="raised">
+                <mat-card-header>
+                    <mat-card-title>{{movie.name ?? movie.title}}</mat-card-title>
+                    <!-- <mat-card-subtitle>{{movie.name ?? movie.title}}</mat-card-subtitle> -->
+                </mat-card-header>
+                <img mat-card-image [src]="imgPrefix + movie.poster_path" [alt]="movie.name ?? movie.title">
+                <mat-card-content>
+                    <p>{{movie.description}}</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <a mat-button [routerLink]="" class="text-decoration-none">View Details</a>
+                </mat-card-actions>
+            </mat-card>
+            }
+        </div>
+    </div>
+</div>

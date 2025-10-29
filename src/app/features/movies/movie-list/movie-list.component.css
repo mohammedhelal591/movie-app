@@ -1,0 +1,45 @@
+.now-playing,
+.upcoming,
+.top-rated,
+.popular {
+  display: grid;
+  grid-template-columns: repeat(5, 250px);
+  grid-template-rows: 1;
+  grid-auto-flow: row;
+
+  gap: 24px;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(3, 250px);
+    gap: 12px;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(1, 250px);
+    gap: 12px;
+  }
+}
+
+.now-playing > :nth-child(1) {
+  grid-column-start: 3 !important;
+}
+
+.mat-mdc-card-header {
+  padding: 8px 16px !important;
+}
+
+.mat-mdc-card-title {
+  font-size: 16px !important;
+  font-weight: 600;
+}
+
+.row {
+  padding-bottom: 20px;
+  padding-top: 20px;
+  border-bottom: 1px solid #a8a8a83d;
+}
+
+.brdr {
+  height: 1px;
+  background-color: #a8a8a83d;
+}
