@@ -5,11 +5,8 @@
     </div>
 
     <div class="row">
-        <div class="w-25">
-            <div class="brdr w-25 mb-3"></div>
-            <h3 class="py-2">Trending <br> Movies <br> To Watch Now</h3>
-            <p class="secondFontColor py-2">Now Playing In Theaters</p>
-            <div class="brdr w-100 mt-3"></div>
+        <div class="col-12">
+            <h6 class="text-start">Now Playing In Theaters: </h6>
         </div>
         <!-- now playing -->
         <div class="now-playing w-100">
@@ -19,12 +16,14 @@
                     <mat-card-title>{{movie.name ?? movie.title}}</mat-card-title>
                     <!-- <mat-card-subtitle>{{movie.name ?? movie.title}}</mat-card-subtitle> -->
                 </mat-card-header>
-                <img mat-card-image [src]="imgPrefix + movie.poster_path" [alt]="movie.name ?? movie.title">
+                <img mat-card-image
+                    [src]="movie.poster_path ? imgPrefix + movie.poster_path : imgPrefix + movie.backdrop_path"
+                    [alt]="movie.name ?? movie.title">
                 <mat-card-content>
                     <p>{{movie.description}}</p>
                 </mat-card-content>
                 <mat-card-actions>
-                    <a mat-button [routerLink]="" class="text-decoration-none">View Details</a>
+                    <a mat-button [routerLink]="'movie-details/'+movie.id" class="text-decoration-none">View Details</a>
                 </mat-card-actions>
             </mat-card>
             }
@@ -33,7 +32,7 @@
 
     <div class="row">
         <div class="col-12">
-            <h6 class="text-start">Upcoming: </h6>
+            <h6 class="text-start">Upcoming Movies: </h6>
         </div>
         <!-- upcoming -->
         <div class="upcoming w-100">
@@ -43,12 +42,14 @@
                     <mat-card-title>{{movie.name ?? movie.title}}</mat-card-title>
                     <!-- <mat-card-subtitle>{{movie.name ?? movie.title}}</mat-card-subtitle> -->
                 </mat-card-header>
-                <img mat-card-image [src]="imgPrefix + movie.poster_path" [alt]="movie.name ?? movie.title">
+                <img mat-card-image
+                    [src]="movie.poster_path ? imgPrefix + movie.poster_path : imgPrefix + movie.backdrop_path"
+                    [alt]="movie.name ?? movie.title">
                 <mat-card-content>
                     <p>{{movie.description}}</p>
                 </mat-card-content>
                 <mat-card-actions>
-                    <a mat-button [routerLink]="" class="text-decoration-none">View Details</a>
+                    <a mat-button [routerLink]="'movie-details/'+movie.id" class="text-decoration-none">View Details</a>
                 </mat-card-actions>
             </mat-card>
             }
@@ -67,12 +68,14 @@
                     <mat-card-title>{{movie.name ?? movie.title}}</mat-card-title>
                     <!-- <mat-card-subtitle>{{movie.name ?? movie.title}}</mat-card-subtitle> -->
                 </mat-card-header>
-                <img mat-card-image [src]="imgPrefix + movie.poster_path" [alt]="movie.name ?? movie.title">
+                <img mat-card-image
+                    [src]="movie.poster_path ? imgPrefix + movie.poster_path : imgPrefix + movie.backdrop_path"
+                    [alt]="movie.name ?? movie.title">
                 <mat-card-content>
                     <p>{{movie.description}}</p>
                 </mat-card-content>
                 <mat-card-actions>
-                    <a mat-button [routerLink]="" class="text-decoration-none">View Details</a>
+                    <a mat-button [routerLink]="'movie-details/'+movie.id" class="text-decoration-none">View Details</a>
                 </mat-card-actions>
             </mat-card>
             }
@@ -91,12 +94,14 @@
                     <mat-card-title>{{movie.name ?? movie.title}}</mat-card-title>
                     <!-- <mat-card-subtitle>{{movie.name ?? movie.title}}</mat-card-subtitle> -->
                 </mat-card-header>
-                <img mat-card-image [src]="imgPrefix + movie.poster_path" [alt]="movie.name ?? movie.title">
+                <img mat-card-image
+                    [src]="movie.poster_path ? imgPrefix + movie.poster_path : imgPrefix + movie.backdrop_path"
+                    [alt]="movie.name ?? movie.title">
                 <mat-card-content>
                     <p>{{movie.description}}</p>
                 </mat-card-content>
                 <mat-card-actions>
-                    <a mat-button [routerLink]="" class="text-decoration-none">View Details</a>
+                    <a mat-button [routerLink]="'movie-details/'+movie.id" class="text-decoration-none">View Details</a>
                 </mat-card-actions>
             </mat-card>
             }

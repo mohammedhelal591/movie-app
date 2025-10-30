@@ -1,11 +1,11 @@
 <mat-toolbar color="primary">
-  <span>{{ title }}</span>
+  <span class="me-3">{{ title }}</span>
   <span class="spacer"></span>
   @if (isLoggedIn$ | async) {
-    <a mat-button routerLink="/movies" routerLinkActive="active">Movies</a>
-    <button mat-button (click)="logout()">Logout</button>
+    <a mat-button routerLink="/movies" class="ps-3" routerLinkActive="active">Movies</a>
+    <button mat-button class="ms-auto" (click)="logout()">Logout</button>
   } @else {
-    <a mat-button routerLink="/login" routerLinkActive="active">Login</a>
+    <a mat-button class="ms-auto" routerLink="/login" routerLinkActive="active">Login</a>
   }
 </mat-toolbar>
 

@@ -1,1 +1,55 @@
-<p>movie-details works!</p>
+<div class="container py-3">
+    <a type="button" routerLink="/movies" class="back-btn" style="max-width: 60px;">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+            <path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z" />
+        </svg>
+        Back
+    </a>
+    <div class="row py-5">
+        <div class="col-md-4">
+            <img [src]="movieDetails.poster_path ? imgPrefix+movieDetails.poster_path : imgPrefix+movieDetails.backdrop_path"
+                class="img-fluid" [alt]="movieDetails.name ? movieDetails.name : movieDetails.title">
+        </div>
+        <div class="col-md-8">
+            <div class="h-100 d-flex align-items-start justify-content-center flex-column">
+                <h5>{{movieDetails.name ? movieDetails.name : movieDetails.title}}</h5>
+                <p class="overview">
+                    {{movieDetails.overview}}
+                </p>
+                <ul class="list-unstyled text-body-secondary p-1">
+                    <li>Release date: {{movieDetails.release_date}}</li>
+                    <li>Rating: {{movieDetails.vote_average.toFixed(1)}}</li>
+                    <li>Genres:
+                        @for(genre of movieDetails.genres; track genre.id){
+                        <span> . {{genre.name}} </span>
+                        }
+                    </li>
+                    <li>
+                        Movie duration: {{movieDetails.runtime}}
+                    </li>
+                    <li>
+                        Original title: {{movieDetails.original_title}}
+                    </li>
+                    <li>
+                        Production companies:
+                        @for(company of movieDetails.production_companies; track company.id){
+                        <span>. {{company.name}}</span>
+                        }
+                    </li>
+                    <li>
+                        Production countries:
+                        @for(country of movieDetails.production_countries; track country.iso_3166_1){
+                        <span>. {{country.name}}</span>
+                        }
+                    </li>
+                    <li>
+                        Revenue: {{movieDetails.revenue}}
+                    </li>
+                    <li>
+                        Status: {{movieDetails.status}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

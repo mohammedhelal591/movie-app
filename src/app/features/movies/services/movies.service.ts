@@ -39,9 +39,9 @@ export class MoviesService {
     );
   }
 
-  getMovieDetails(id: number): Observable<MovieDetails> {
+  getMovieDetails(movieId: number): Observable<MovieDetails> {
     return this.http.get<MovieDetails>(
-      `${this.apiUrl}/movie/${id}?api_key=${this.apiKey}`
+      `${this.apiUrl}/movie/${movieId}?api_key=${this.apiKey}`
     );
   }
 

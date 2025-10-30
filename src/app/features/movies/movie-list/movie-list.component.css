@@ -20,16 +20,12 @@
   }
 }
 
-.now-playing > :nth-child(1) {
-  grid-column-start: 3 !important;
-}
-
 .mat-mdc-card-header {
   padding: 8px 16px !important;
 }
 
 .mat-mdc-card-title {
-  font-size: 16px !important;
+  font-size: 13px !important;
   font-weight: 600;
 }
 

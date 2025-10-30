@@ -19,43 +19,7 @@ export const routes: Routes = [
     resolve: { moviesList: movieResolver },
   },
   {
-    path: 'movies/upcoming',
-    loadComponent: () =>
-      import('./features/movies/upcoming/upcoming.component').then(
-        (m) => m.UpcomingComponent
-      ),
-    canActivate: [authGuard],
-    resolve: { moviesList: movieResolver },
-  },
-  {
-    path: 'movies/popular',
-    loadComponent: () =>
-      import('./features/movies/popular/popular.component').then(
-        (m) => m.PopularComponent
-      ),
-    canActivate: [authGuard],
-    resolve: { moviesList: movieResolver },
-  },
-  {
-    path: 'movies/top-rated',
-    loadComponent: () =>
-      import('./features/movies/top-rated/top-rated.component').then(
-        (m) => m.TopRatedComponent
-      ),
-    canActivate: [authGuard],
-    resolve: { moviesList: movieResolver },
-  },
-  {
-    path: 'movies/now-playing',
-    loadComponent: () =>
-      import('./features/movies/now-playing/now-playing.component').then(
-        (m) => m.NowPlayingComponent
-      ),
-    canActivate: [authGuard],
-    resolve: { moviesList: movieResolver },
-  },
-  {
-    path: 'movies/movie-details',
+    path: 'movies/movie-details/:movieId',
     loadComponent: () =>
       import('./features/movies/movie-details/movie-details.component').then(
         (m) => m.MovieDetailsComponent
@@ -65,11 +29,11 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'movies',
     pathMatch: 'full',
   },
   {
     path: '**',
-    redirectTo: 'login',
+    redirectTo: 'movies',
   },
 ];
